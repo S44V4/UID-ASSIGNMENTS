@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Application Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Application Form</h1>
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-row">
+                <label>First Name: <input type="text" id="fname" required></label>
+                <label>Last Name: <input type="text" id="lname" required></label>
+            </div>
+            <div class="form-row">
+                <label>Date of Birth: <input type="date" id="dob" required min="1994-03-10" max="2009-03-10" placeholder="dd-mm-yyyy"></label>
+                <label>Age: <input type="number" id="age" required min="15" max="30"></label>
+            </div>
+            <div class="form-row">
+                <label>Gender: 
+                    <select id="gender">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </label>
+                <label>Email Address: <input type="email" id="email" required></label>
+            </div>
+            <div class="form-row">
+                <label class="group-label">Positions Available:</label>
+                <div class="radio-group">
+                    <input type="radio" name="position" value="Junior Developer" required> Junior Developer
+                    <input type="radio" name="position" value="Mid-level Developer"> Mid-level Developer
+                    <input type="radio" name="position" value="Senior Developer"> Senior Developer
+                </div>
+            </div>
+            <div class="form-row">
+                <label class="group-label">Programming Languages:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" name="language" value="Java"> Java
+                    <input type="checkbox" name="language" value="JavaScript"> JavaScript
+                    <input type="checkbox" name="language" value="Python"> Python
+                </div>
+            </div>
+            <div class="form-row">
+                <label>Password: <input type="password" id="password" required minlength="8"
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+                    title="Must contain at least one number, one uppercase letter, one lowercase letter, and at least 8 characters."></label>
+                <label>Confirm Password: <input type="password" id="confirm_password" required minlength="8"></label>
+            </div>
+            <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+        <p id="displayNames"></p> <!-- Added paragraph to display names below the form -->
+    </div>
+    <script src="script.js"></script> <!-- Ensure this file exists and is in the same directory -->
+</body>
+</html>
